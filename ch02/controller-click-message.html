@@ -17,9 +17,10 @@
     angular.module('notesApp', [])
             .controller('MainCtrl', [function() {
                 var self = this;
-                self.message = 'Hello '; // remember the trailing space!
+                // Perhaps we **do not** need the trailing space after all (since its in the element text)
+                self.message = 'Hello'; // initialize the message.
                 self.changeMessage = function() {
-                    self.message = 'Goodbye '; // ditto!
+                    self.message = (self.message == 'Hello' ? 'Goodbye' : 'Hello'); // toggle the message
                 }
             }])
 </script>
