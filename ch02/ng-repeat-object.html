@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Notes App</title>
+    <style>
+        .label {
+            width: 24%;
+            float: left;
+        }
+        .author {
+            left-margin: 24%;
+        }
+    </style>
 </head>
 <body ng-controller="MainCtrl as ctrl">
 
 <div ng-repeat="(author, note) in ctrl.notes">
-    <span class="label"> {{note.label}}</span>
-    <span class="author" ng-bind="author"></span>
+    <div class="label"> {{note.label}}</div>
+    <div class="author" ng-bind="author"></div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
