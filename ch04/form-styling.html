@@ -13,6 +13,12 @@
         .username.ng-dirty.ng-invalid-minlength {
             background-color: lightpink;
         }
+        .password.ng-valid {
+            background-color: green;
+        }
+        .password.ng-dirty.ng-invalid-required {
+            background-color: red;
+        }
     </style>
 </head>
 <body ng-controller="MainCtrl as ctrl">
@@ -31,6 +37,7 @@
     <label>
         Password:&nbsp;
         <input type="password"
+               class="password"
                name="pwd"
                ng-model="ctrl.user.password"
                required="">
