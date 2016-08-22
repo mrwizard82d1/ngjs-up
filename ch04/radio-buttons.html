@@ -8,37 +8,31 @@
 
 <div>
     <h2>What is your favorite language?</h2>
-    <div ng-init="user = {language: 'TypeScript'}">
+    <!--
+    How very interesting.
+
+    When I did not use `ng-repeat`, I was able to the expression
+    `user.language` in all the radio button controls **and** in the subsequent
+    paragraph.
+
+    When I changed to use `ng-repeat`, change the selected radio button no
+    longer set `user.language`.
+
+    By changing the model expression to `ctrl.user.language`, then both
+    elements were looking at the same model.
+
+    I wonder if `ng-repeat` creates a "nested scope"?
+    -->
+    <div ng-init="user = {language: 'TypeScript'}" ng-repeat="language in ctrl.webLanguages">
         <label>
-            {{ctrl.webLanguages[0]}}
+            {{language}}
             <input type="radio"
                    name="language"
-                   ng-model="user.language"
-                   value="{{ctrl.webLanguages[0]}}">
-        </label>
-        <label>
-            {{ctrl.webLanguages[1]}}
-            <input type="radio"
-                   name="language"
-                   ng-model="user.language"
-                   value="{{ctrl.webLanguages[1]}}">
-        </label>
-        <label>
-            {{ctrl.webLanguages[2]}}
-            <input type="radio"
-                   name="language"
-                   ng-model="user.language"
-                   value="{{ctrl.webLanguages[2]}}">
-        </label>
-        <label>
-            {{ctrl.webLanguages[3]}}
-            <input type="radio"
-                   name="language"
-                   ng-model="user.language"
-                   value="{{ctrl.webLanguages[3]}}">
+                   ng-model="ctrl.user.language"
+                   value="{{language}}">
         </label>
     </div>
-    <p>{{user.language}}, I see.</p>
+    <p>{{ctrl.user.language}}, I see.</p>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
