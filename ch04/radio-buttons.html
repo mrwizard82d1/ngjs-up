@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="notesApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+
+<div>
+    <h2>What is your favorite language?</h2>
+    <div ng-init="user = {language: 'TypeScript'}">
+        <label>
+            ClojureScript
+            <input type="radio"
+                   name="language"
+                   ng-model="user.language"
+                   value="ClojureScript">
+        </label>
+        <label>
+            Dart
+            <input type="radio"
+                   name="language"
+                   ng-model="user.language"
+                   value="Dart">
+        </label>
+        <label>
+            JavaScript
+            <input type="radio"
+                   name="language"
+                   ng-model="user.language"
+                   value="JavaScript">
+        </label>
+        <label>
+            TypeScript
+            <input type="radio"
+                   name="language"
+                   ng-model="user.language"
+                   value="TypeScript">
+        </label>
+    </div>
+    <p>{{user.language}}, I see.</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script>
+    angular.module('notesApp', [])
+            .controller('MainCtrl', [function () {
+                var self = this;
+                self.user = {language: 'TypeScript'};
+            }]);
+</script>
+
+</body>
+</html>
