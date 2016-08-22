@@ -10,28 +10,28 @@
     <h2>What is your favorite language?</h2>
     <div ng-init="user = {language: 'TypeScript'}">
         <label>
-            ClojureScript
+            {{ctrl.webLanguages[0]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
                    value="ClojureScript">
         </label>
         <label>
-            Dart
+            {{ctrl.webLanguages[1]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
                    value="Dart">
         </label>
         <label>
-            JavaScript
+            {{ctrl.webLanguages[2]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
                    value="JavaScript">
         </label>
         <label>
-            TypeScript
+            {{ctrl.webLanguages[3]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
@@ -46,6 +46,7 @@
     angular.module('notesApp', [])
             .controller('MainCtrl', [function () {
                 var self = this;
+                self.webLanguages = ['ClojureScript', 'Dart', 'JavaScript', 'TypeScript']
                 self.user = {language: 'TypeScript'};
             }]);
 </script>
