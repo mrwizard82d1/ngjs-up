@@ -14,28 +14,28 @@
             <input type="radio"
                    name="language"
                    ng-model="user.language"
-                   value="ClojureScript">
+                   value="{{ctrl.webLanguages[0]}}">
         </label>
         <label>
             {{ctrl.webLanguages[1]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
-                   value="Dart">
+                   value="{{ctrl.webLanguages[1]}}">
         </label>
         <label>
             {{ctrl.webLanguages[2]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
-                   value="JavaScript">
+                   value="{{ctrl.webLanguages[2]}}">
         </label>
         <label>
             {{ctrl.webLanguages[3]}}
             <input type="radio"
                    name="language"
                    ng-model="user.language"
-                   value="TypeScript">
+                   value="{{ctrl.webLanguages[3]}}">
         </label>
     </div>
     <p>{{user.language}}, I see.</p>
@@ -46,7 +46,7 @@
     angular.module('notesApp', [])
             .controller('MainCtrl', [function () {
                 var self = this;
-                self.webLanguages = ['ClojureScript', 'Dart', 'JavaScript', 'TypeScript']
+                self.webLanguages = ['ClojureScript', 'Dart', 'JavaScript', 'TypeScript'];
                 self.user = {language: 'TypeScript'};
             }]);
 </script>
