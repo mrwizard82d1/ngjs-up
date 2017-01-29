@@ -22,10 +22,18 @@
 <body ng-controller="MainCtrl as ctrl">
 <div ng-repeat="note in ctrl.notes"
      ng-class="ctrl.getNoteClass(note.done)">
+	<!--
+	 This block shows all the notes but shows completed notes in a green background.k
+	-->
     <div class="label"> {{note.label}}</div>
     <div class="assignee">
        {{ctrl.getAssignee(note.assignee)}}
     </div>
+	<!--
+	 This block is the code from the book. It **does not** show notes marked as "done."
+    <div class="label"> {{note.label}}</div>
+	<div class="assignee" ng-show="note.assignee" ng-bind="note.assignee"></div>
+	-->
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
