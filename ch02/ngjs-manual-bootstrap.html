@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="notesApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Module Example (with manual bootstrap)</title>
+</head>
+<body>
+
+Hello {{1 + 1}}nd time AngularJS with explicit (manual) bootstrap
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+<script type="text/javascript">
+    angular.module('notesApp', []);
+	angular.element(document).ready(function() {
+		angular.bootstrap(document, ['notesApp'])
+	});
+</script>
+
+</body>
+</html>
+
