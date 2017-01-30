@@ -16,7 +16,7 @@
 <body ng-controller="MainCtrl as ctrl">
 
 <div ng-repeat="(author, note) in ctrl.notes">
-    <div class="label"> {{note.label}}</div>
+    <div class="label" ng-bind="ctrl.getLabel(note)"></div>
     <div class="author" ng-bind="author"></div>
 </div>
 
@@ -33,7 +33,7 @@
                     },
                     Misko: {
                         id: 3,
-                        label: 'Finished Third Note',
+                        label: 'Third Note',
                         done: true
                     },
                     brad: {
@@ -42,6 +42,9 @@
                         done: false
                     }
                 };
+				self.getLabel = function(note) {
+					return (note.label + (note.done ? ' (Finished)' : ''));
+				};
             }]);
 </script>
 
